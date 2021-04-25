@@ -26,4 +26,4 @@ jobs:
     - name: Installing Pods
       run: pod install
     - name: Build
-      run: /usr/bin/xcodebuild -workspace MvvmExampleSwift5.0.xcworkspace -scheme MvvmExampleSwift5.0
+      run: /usr/bin/xcodebuild -workspace MvvmExampleSwift5.0.xcworkspace -scheme MvvmExampleSwift5.0 -configuration "Debug"
