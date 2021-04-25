@@ -1,0 +1,29 @@
+name: Swift
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./MvvmExampleSwift5.0
+    steps:
+    - uses: actions/checkout@v2
+    - name: Xcode Version
+      run: /usr/bin/xcodebuild -version
+    - name: View All Xcode versions
+      run: ls /Applications | grep Xcode
+    - name: Dump file list
+      run: ls -R
+    - name: Dump Applications list
+      run: ls /Applications
+    - name: Installing Pods
+      run: pod install
+    - name: Build
+      run: /usr/bin/xcodebuild -workspace MvvmExampleSwift5.0.xcworkspace -scheme MvvmExampleSwift5.0
